@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+</br>
+<div class="container col-sm-10">
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+</div>
+<div class="container d-sm-flex col-md-10 align-items-center justify-content-between">
+    <div>
+        <h2>Create task for {{request.user}}</h2>
+    </div>
+    <div id="task_form">
+        <button type="submit" hx-get="{% url 'create_task' %}" hx-target="#task_form"  hx-swap="outerhtml" class="btn btn-primary">Add Task</button>
+    </div>
+</div>
+</br>
+<div class="container table-responsive col-sm-10">
+    <table class="table table-striped">
+        <caption>Successfully completed tasks: {{task_completed}}</caption>
+        <thead class="table-dark">
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>Task</th>
+                <th>Time left</th>
+                <th >Check to complete</th>
+                <th>Tag</th>
+            </tr>
+        </thead>
+        <tbody id="swap_this" class="table-stripped">
+
+            {% include 'partials/table_row.html' %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

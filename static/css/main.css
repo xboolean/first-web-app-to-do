@@ -1,0 +1,48 @@
+.asteriskField {
+    display: none;
+}
+
+svg.icon-check {
+    height: 24px !important;
+    width: 24px !important;
+    
+}
+
+.table {
+    text-align: center;
+} 
+
+#update-task {
+    text-align: justify;
+}
+
+.bg-study{
+    background-color: #84B26C;
+}
+
+.bg-leisure {
+    background-color: aqua;
+}
+
+.bg-other {
+    background-color:  #8B5FBF;
+}
+
+.bg-work {
+    background-color: #CA5310;
+}
+
+.bg-family {
+    background-color: #B9FAF8;
+}
+
+.bg-personal {
+    background-color: #CE6D8B;
+}
+
+@media (max-width: 576px) {
+    .table th,
+    .table td {
+        padding: .3em !important;
+    }
+}

@@ -1,0 +1,26 @@
+{% if page_obj %}
+{% for task in page_obj %}
+<tr id="current_row" {{task.red_row}}>
+    <td><span class="badge bg-danger" style="cursor:pointer;" hx-post="{% url 'delete_task' task.pk %}" hx-target="#swap_this" hx-swap="innerHTML">X</span></td>
+    <td>{{ forloop.counter }}</td>
+    <td><a hx-get="{% url 'edit_task' task.pk %}" style="cursor:pointer;" hx-swap="outerHTML">{{ task.name }}</a></td>
+    <td>{{ task.time_left }}</td>
+    <td><a hx-post="{% url 'complete_task' task.pk %}" hx-target="#swap_this" hx-swap="innerHTML"><svg style="cursor:pointer;" class="icon-check" viewBox="0 0 20 20" width="30" height="30"  fill="currentColor"  xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></a></td>
+    <td>{{ task.category.get_html_badge }}</td>
+</tr>
+{% endfor %}
+
+{% if page_obj.has_next %}
+    <tr id="load_more" class="borderless">
+        <td colspan="10" class="text-center"> 
+            <button type="submit" hx-get="{% url 'index' %}?page={{page_obj.next_page_number }}" hx-target="#load_more" hx-swap="outerHTML" class="btn btn-primary">Load More</button>
+        </td>
+    </tr>
+{% endif %}
+{% else %}
+<tr>
+    <td colspan="10">
+        You have no any task by now. Create one!
+    </td>
+</tr>
+{% endif %}
