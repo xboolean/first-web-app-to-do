@@ -4,7 +4,7 @@ from django import forms
 from crispy_forms.layout import Layout, Fieldset, Row, Column, Submit, Div, ButtonHolder
 from crispy_forms.helper import FormHelper
 from django.urls import reverse
-
+from django.core.exceptions import ValidationError
 
 class CustomUserCreationForm(UserCreationForm):
     # email = forms.EmailField() #additional field
@@ -22,5 +22,5 @@ class CustomUserCreationForm(UserCreationForm):
             'password1',
             'password2',
             ButtonHolder(Submit( 'Register', 'Register', css_class='btn-primary')),
-            css_class="col-sm-6 container my-4")
+            css_class="container col-sm-6 my-4")
             )

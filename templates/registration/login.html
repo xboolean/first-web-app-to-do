@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<div class="container col-sm-6">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
 <div class="container col-sm-6 my-4">
     <form method="POST">
         {% csrf_token %}
