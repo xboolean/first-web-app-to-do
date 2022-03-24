@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('index/', views.TaskTableView.as_view(), name='index'),
+    path('', views.TaskTableView.as_view(), name='index'),
     path('detail/<pk>', views.TaskDetailView.as_view(), name='detail_view'),
     path('empty_response/', views.response, name='response')
     
