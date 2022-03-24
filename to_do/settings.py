@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DEBUG', True)
 # if not DEBUG:
 #     ALLOWED_HOSTS += [os.environ.get('ALLOWED_HOSTS')]
 
-ALLOWED_HOSTS = ['127.0.0.1', 'tasker2.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'first-web-app-to-do.herokuapp.com']
 
 # Application definition
 
