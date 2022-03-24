@@ -1,8 +1,8 @@
 # Django/HTMX to-do web application
 
-## About
-
 ![thumbnail](https://user-images.githubusercontent.com/94601148/159905943-505fd569-a7c1-4d0f-921b-49381f11d39b.png)
+
+## About
 
 To Do web application has been made by using Django and HTMX for the backend. HTML and Bootstrap for the frontend. Tasks display in neat table. Site has only an educational purpose.
 
